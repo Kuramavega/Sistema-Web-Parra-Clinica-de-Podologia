@@ -67,7 +67,7 @@ Esto creará las tablas y ejecutará el seed automáticamente.
 npm run dev
 \`\`\`
 
-La aplicación estará disponible en: http://localhost:3000
+La aplicación estará disponible en: https://podocare-syste.vercel.app/login
 
 ## Credenciales de Demo
 
@@ -75,99 +75,6 @@ La aplicación estará disponible en: http://localhost:3000
 - **Contraseña**: password123
 - **Rol**: ADMIN
 
-## Rutas Principales
-
-### Autenticación
-- `/login` - Login de usuarios
-
-### Dashboard
-- `/` - Dashboard principal
-
-### Gestión de Inventario
-- `/productos` - Listado y CRUD de productos
-- `/categorias` - Gestión de categorías (en API)
-- `/clientes` - CRUD de clientes
-- `/proveedores` - CRUD de proveedores
-
-### Operaciones Comerciales
-- `/compras` - Registro de compras a proveedores
-- `/ventas/nueva` - Crear nueva venta
-- `/ventas/historial` - Historial de ventas
-
-### Administración
-- `/usuarios` - CRUD de usuarios del sistema (solo ADMIN)
-
-## API Endpoints
-
-### Autenticación
-- `POST /api/auth/login` - Login
-- `POST /api/auth/logout` - Logout
-
-### Productos
-- `GET /api/productos` - Listar productos
-- `POST /api/productos` - Crear producto
-- `PUT /api/productos/[id]` - Actualizar producto
-- `PATCH /api/productos/[id]` - Cambiar estado
-
-### Clientes
-- `GET /api/clientes` - Listar clientes
-- `POST /api/clientes` - Crear cliente
-- `PUT /api/clientes/[id]` - Actualizar cliente
-
-### Proveedores
-- `GET /api/proveedores` - Listar proveedores
-- `POST /api/proveedores` - Crear proveedor
-- `PUT /api/proveedores/[id]` - Actualizar proveedor
-- `DELETE /api/proveedores/[id]` - Eliminar proveedor
-
-### Compras
-- `GET /api/compras` - Listar compras
-- `POST /api/compras` - Registrar compra (aumenta stock)
-- `GET /api/compras/[id]` - Detalle de compra
-
-### Ventas
-- `GET /api/ventas` - Listar ventas
-- `POST /api/ventas` - Registrar venta (disminuye stock)
-- `GET /api/ventas/[id]` - Detalle de venta
-
-### Usuarios
-- `GET /api/usuarios` - Listar usuarios (solo ADMIN)
-- `POST /api/usuarios` - Crear usuario (solo ADMIN)
-- `PUT /api/usuarios/[id]` - Actualizar usuario (solo ADMIN)
-
-## Estructura de Base de Datos
-
-### Tablas Principales
-
-**Usuario**
-- id, nombreCompleto, correo, passwordHash, idRol, activo
-
-**Rol**
-- id, nombre (ADMIN, EMPLEADO)
-
-**Cliente**
-- id, nombreCompleto, telefono, correo, cedula, direccion
-
-**Producto**
-- id, nombre, descripcion, idCategoria, precioCompra, precioVenta, stockActual, stockMinimo, activo
-
-**CategoriaProducto**
-- id, nombre, descripcion
-
-**Proveedor**
-- id, nombre, telefono, correo, direccion
-
-**Compra**
-- id, fecha, idProveedor, total, idUsuario
-
-**DetalleCompra**
-- id, idCompra, idProducto, cantidad, precioUnitario, subtotal
-
-**Venta**
-- id, fecha, idCliente, total, metodoPago, nombrePodologo, numeroReceta, idUsuario
-
-**DetalleVenta**
-- id, idVenta, idProducto, cantidad, precioUnitario, subtotal
 
 ## Scripts Disponibles
 
